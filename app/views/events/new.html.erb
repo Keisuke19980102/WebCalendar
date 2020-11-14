@@ -1,0 +1,28 @@
+<div class="main events-new">
+<div clas="container">
+    <%= form_tag("/events/#{@year}/#{@month}/#{@aday}/create") do %>
+        <% @event.errors.full_messages.each do |message| %>
+            <%= message %>
+        <% end %>
+        <div class="input-group mb-3">
+            <input name="user" type="text" class="form-control" placeholder="ユーザ名" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input name="name" type="text" class="form-control" placeholder="イベント名" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input name="start_time" type="number" class="form-control" placeholder="開始時間" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input name="start_time" type="number" class="form-control" placeholder="終了時間" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input name="place" type="text" class="form-control" placeholder="場所" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input name="memp" type="text" class="form-control" placeholder="備考" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <input type="submit" value="保存">
+    <% end %>
+    </div>
+</div>

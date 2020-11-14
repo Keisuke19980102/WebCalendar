@@ -1,0 +1,13 @@
+<div class="main events-detail">
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+    <h1><%= @event.name %></h1>
+    <p><%= @event.user %></p>
+    <p><%= "開始#{@event.start_year}年#{@event.start_month}月#{@event.start_day}日#{@event.start_hour}時" %></p>
+    <p><%= "終了#{@event.end_year}年#{@event.end_month}月#{@event.end_day}日#{@event.end_hour}時" %></p>
+    <P><%= @event.place %></p>
+    <p><%= @event.memo %> </p>
+    <%= link_to("編集","/events/#{@event.id}/edit") %>
+    </div>
+    </div>
+</div>

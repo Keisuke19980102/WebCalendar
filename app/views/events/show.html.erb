@@ -1,0 +1,13 @@
+<div class="main events-show">
+    <div class="container">
+        <h2> <%= "#{@year}年#{@month}月#{@aday}日のイベント一覧" %> </h2>
+        <% @theday_event.each do |event| %>
+            <div class="event-item">
+                <%= link_to("#{event.start_hour}:00~#{event.end_hour}:00   #{event.name}","/events/#{event.id}/detail") %>
+            </div>
+        <% end %>
+        <div class="post-menus">
+            <%= link_to("追加","/events/#{@year}/#{@month}/#{@aday}/new")%>
+        </div>
+    </div>
+</div>

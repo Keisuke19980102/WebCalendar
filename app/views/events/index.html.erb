@@ -1,0 +1,34 @@
+<div class="main events-index">
+    
+    <% prev_month_day = @day_.prev_month %>
+    <% next_month_day = @day_.next_month %>
+    <%= link_to("<#{prev_month_day.year}年#{prev_month_day.month}月","/events/#{prev_month_day.year}/#{prev_month_day.month}") %>
+    <%= link_to("#{next_month_day.year}年#{next_month_day.month}月>","/events/#{next_month_day.year}/#{next_month_day.month}") %>
+    <% number_of_weeks = @page_days.size / 7 %>
+    <div class="container">
+        <h2><%= @year %>年<%= @month %>月</h2>
+        <div class="events-index-item">
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Sunday</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+                <th scope="col">Saturday</th>
+            </tr>
+        </thead>
+            <% for i in 0..number_of_weeks-1 do%>
+            <tr>
+                <% for j in 0..6 do%>
+                <% k = i*7+j %>
+                    <td><%= link_to("#{@page_days[k]}","/events/#{@page_days[k].year}/#{@page_days[k].mon}/#{@page_days[k].mday}") %></td>
+                <% end %>
+            </tr>
+            <% end %>
+        </table>
+        </div>
+    </div>
+</div>

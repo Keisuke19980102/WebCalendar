@@ -1,0 +1,20 @@
+<div class="main events-edit">
+    <%= form_tag("/events/#{@event.id}/update") do %>
+        <% @event.errors.full_messages.each do |message| %>
+            <%= message %>
+        <% end %>
+        <p>ユーザ名</p>
+        <input name="user" value="<%= @event.user %>">
+        <p>イベント名</p>
+        <input name="name" value="<%= @event.name %>">
+        <p>開始時間</p>
+        <input type="number" name="start_time" value="<%= @event.start_hour %>">
+        <p>終了時間</p>
+        <input type="number" name="end_time" value="<%= @event.end_hour %>">
+        <p>場所</p>
+        <input name="place" value="<%= @event.place %>">
+        <p>備考</p>
+        <textarea name="memo" value="<%= @event.memo %>"></textarea>
+        <input type="submit" value="編集">
+    <% end %>
+</div>
